@@ -36,9 +36,9 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center font-sans">
-      <div className="bg-white shadow-lg rounded w-full max-w-2xl">
-        <h1 className="text-6xl text-center text-red-100 font-light mt-8 mb-8">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center font-sans px-4 sm:px-6 lg:px-8">
+      <div className="bg-white shadow-lg rounded w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl text-center text-red-500 font-light mt-6 sm:mt-8 mb-6 sm:mb-8">
           todos
         </h1>
         <div className="bg-white shadow rounded">
@@ -46,9 +46,9 @@ const App: React.FC = () => {
           <TodoList todos={filteredTodos} toggleTodo={toggleTodo} />
         </div>
         {/* Footer */}
-        <div className="flex justify-between p-4 text-gray-500 text-sm">
-          <span>{todos.filter(todo => !todo.completed).length} items left</span>
-          <div className="space-x-2">
+        <div className="flex flex-col sm:flex-row justify-between p-4 text-gray-500 text-sm">
+          <span className="mb-2 sm:mb-0">{todos.filter(todo => !todo.completed).length} items left</span>
+          <div className="space-x-2 mb-2 sm:mb-0">
             <button 
               onClick={() => setFilter('all')}
               className={`border rounded px-2 py-1 ${filter === 'all' ? 'bg-gray-200' : 'hover:bg-gray-100'}`}
